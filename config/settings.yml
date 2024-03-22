@@ -1,4 +1,4 @@
-TODO_plugin_name:
-  plugin_name_enabled:
+discourse-contact-plugin:
+  contact_form_enabled:
     default: false
     client: true

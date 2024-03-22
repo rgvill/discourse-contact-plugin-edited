@@ -3,7 +3,11 @@ en:
     admin:
       site_settings:
         categories:
-          TODO_plugin_name: "Plugin Name"
+          contact_plugin_name: "Contact form"
   js:
-    discourse_plugin_name:
-      placeholder: placeholder
+    contact:
+      title: 'Contact us'
+
+      create_contact:
+        text_name_label: 'Name'
+        submit_label: 'Send'
