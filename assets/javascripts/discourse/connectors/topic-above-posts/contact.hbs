@@ -1,0 +1,30 @@
+{{#if (includes @outletArgs.model.tags 'contact')}}
+
+
+<form {{ action 'createContact' name email phone message on='submit' }}>
+  <label>
+    {{ i18n 'contact.create_contact.text_name_label' }}:
+
+  </label>
+  {{ input type="text" value=name name='name' }}
+
+  <label>
+    {{ i18n 'contact.create_contact.text_email_label' }}
+  </label>
+  {{ input type="text" value=email name='email' }}
+
+  <label>
+    {{ i18n 'contact.create_contact.text_phone_label' }}
+  </label>
+  {{ input type="text" value=phone }}
+
+  <label>
+    {{ i18n 'contact.create_contact.text_message_label' }}
+  </label>
+  {{ textarea value=message }}
+
+  <button type='submit' class='btn btn-primary'>
+    {{ i18n 'contact.create_contact.submit_label' }}
+  </button>
+</form>
+{{/if}}
