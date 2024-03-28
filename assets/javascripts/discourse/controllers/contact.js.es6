@@ -1,4 +1,3 @@
-import Component from '@ember/component';
 import Controller from '@ember/controller';
 
 export default Controller.extend({
@@ -16,7 +15,6 @@ export default Controller.extend({
           this.contacts.pushObject(contact);
         }
       })
-      .catch(console.error);
   },
 
   actions: {
@@ -34,7 +32,6 @@ export default Controller.extend({
         .then(result => {
           this.contacts.pushObject(result.target);
         })
-        .catch(console.error);
     },
 
     deleteContact(contact) {
@@ -42,7 +39,6 @@ export default Controller.extend({
         .then(() => {
           this.contacts.removeObject(contact);
         })
-        .catch(console.error);
     }
   }
 })
