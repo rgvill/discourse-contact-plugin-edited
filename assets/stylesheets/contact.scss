@@ -1,10 +1,9 @@
 textarea {
-  display: block;
-  min-width: 500px;
-  resize: vertical;
+  min-width: 350px;
+  /*resize: vertical;*/
 }
 
 /* https://stackoverflow.com/questions/6046110/styling-form-with-label-above-inputs/6046196#6046196 */
-input, input {
+input, textarea, label, form {
   display: block;
 }
