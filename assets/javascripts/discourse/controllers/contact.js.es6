@@ -13,8 +13,8 @@ export default Controller.extend({
       .then(result => {
         for (const contact of result.content) {
           this.contacts.pushObject(contact);
-        };
-      })
+        }
+      });
   },
 
   actions: {
@@ -31,14 +31,14 @@ export default Controller.extend({
       contactRecord.save()
         .then(result => {
           this.contacts.pushObject(result.target);
-        };)
+        });
     },
 
     deleteContact(contact) {
       this.store.destroyRecord('contact', contact)
         .then(() => {
           this.contacts.removeObject(contact);
-        };)
+        });
     }
-  };
-})
+  }
+});

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ContactStore
   class << self
     def get_contacts

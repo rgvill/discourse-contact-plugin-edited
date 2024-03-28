@@ -1,4 +1,5 @@
 # coding: utf-8
+# frozen_string_literal: true
 class ContactController < ApplicationController
 
 #  skip_before_action :check_xhr, raise: false
