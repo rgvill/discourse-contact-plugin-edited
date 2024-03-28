@@ -13,7 +13,7 @@ export default Controller.extend({
       .then(result => {
         for (const contact of result.content) {
           this.contacts.pushObject(contact);
-        }
+        };
       })
   },
 
@@ -22,23 +22,23 @@ export default Controller.extend({
 
       const contactRecord = this.store.createRecord('contact', {
         id: Date.now(),
-        name: name,
-        email: email,
-        phone: phone,
-        message: message
+        name,
+        email,
+        phone,
+        message
       });
 
       contactRecord.save()
         .then(result => {
           this.contacts.pushObject(result.target);
-        })
+        };)
     },
 
     deleteContact(contact) {
       this.store.destroyRecord('contact', contact)
         .then(() => {
           this.contacts.removeObject(contact);
-        })
+        };)
     }
-  }
+  };
 })
