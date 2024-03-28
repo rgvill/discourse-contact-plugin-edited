@@ -1,4 +1,11 @@
 class ContactsController < ApplicationController
+
+  skip_before_action :check_xhr,
+                     :verify_authenticity_token,
+                     :redirect_to_login_if_required,
+                     raise: false
+
+
   def index
     Rails.logger.info 'Called ContactsController#index'
     contacts = ContactStore.get_contacts()
@@ -21,15 +28,22 @@ class ContactsController < ApplicationController
 
     ContactStore.add_contact(contact_id, contact)
 
-    @date=Time.now.strftime('%a, %-d %b %Y %H:%M:%S %z')
+    @date=Time.now.strftime('%a, %-d %b %Y %H:%M:%S')
 
     @mail="
 Date: #{@date}
-From: #{contact['email']}
+From: #{contact['email'] || "unknown@example.com"}
 To: jons-biography@beta.buildcivitas.com
-Subject: #{contact['name']} - #{@date}
+Subject: Contact from #{contact['name']} - #{@date}
 
-#{contact['message']}"
+
+Name:  #{contact['name']}
+Phone: #{contact['phone']}
+Email: #{contact['email']}
+
+Message:
+
+> #{contact['message']}"
 
 
     Mail.new(@mail).message_id.presence

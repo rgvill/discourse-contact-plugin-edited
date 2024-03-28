@@ -6,7 +6,7 @@ import DiscourseRoute from 'discourse/routes/discourse';
 
 export default DiscourseRoute.extend({
   renderTemplate() {
-    // Renders the template `../templates/contact.hbs` Blagh
-    this.render('contact');
+    // Renders the template `../templates/contact.hbs`
+    this.render('ContactForm');
   }
 });

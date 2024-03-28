@@ -1,5 +1,7 @@
 <h1>{{ i18n 'contact.title' }}</h1>
 
+<Hello />
+
 <form {{ action 'createContact' name email phone message on='submit' }}>
   <label>
     {{ i18n 'contact.create_contact.text_name_label' }}:

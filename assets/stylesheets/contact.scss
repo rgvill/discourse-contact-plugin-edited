@@ -3,3 +3,8 @@ textarea {
   min-width: 500px;
   resize: vertical;
 }
+
+/* https://stackoverflow.com/questions/6046110/styling-form-with-label-above-inputs/6046196#6046196 */
+input, input {
+  display: block;
+}

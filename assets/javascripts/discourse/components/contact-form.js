@@ -1,8 +1,7 @@
 import Component from '@ember/component';
 import Controller from '@ember/controller';
 
-export default Controller.extend({
-
+export default Component.extend({
   init() {
     this._super();
     this.set('contacts', []);
