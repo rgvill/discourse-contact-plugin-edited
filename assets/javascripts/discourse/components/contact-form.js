@@ -8,13 +8,11 @@ export default Component.extend({
   },
 
   fetchContacts() {
-    this.store
-      .findAll("contact")
-      .then((result) => {
-        for (const contact of result.content) {
-          this.contacts.pushObject(contact);
-        }
-      });
+    this.store.findAll("contact").then((result) => {
+      for (const contact of result.content) {
+        this.contacts.pushObject(contact);
+      }
+    });
   },
 
   actions: {
@@ -27,19 +25,15 @@ export default Component.extend({
         message,
       });
 
-      contactRecord
-        .save()
-        .then((result) => {
-          this.contacts.pushObject(result.target);
-        });
+      contactRecord.save().then((result) => {
+        this.contacts.pushObject(result.target);
+      });
     },
 
     deleteContact(contact) {
-      this.store
-        .destroyRecord("contact", contact)
-        .then(() => {
-          this.contacts.removeObject(contact);
-        });
+      this.store.destroyRecord("contact", contact).then(() => {
+        this.contacts.removeObject(contact);
+      });
     },
   },
 });

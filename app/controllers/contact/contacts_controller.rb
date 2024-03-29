@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class ContactsController < ApplicationController
-  requires_plugin 'discourse-contact-plugin'
+  requires_plugin "discourse-contact-plugin"
 
   skip_before_action :check_xhr,
                      :verify_authenticity_token,

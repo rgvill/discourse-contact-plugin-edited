@@ -3,5 +3,5 @@
  * route with the same name needs to be created in the `routes` directory.
  */
 export default function () {
-  this.route("contact" );
+  this.route("contact");
 }
