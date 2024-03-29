@@ -4,7 +4,8 @@ export default Component.extend({
   init() {
     this._super();
     this.set("contacts", []);
-    this.fetchContacts();
+    /* TODO: I've disabled the /contacts route to avoid leaking user data. */
+    //this.fetchContacts();
   },
 
   fetchContacts() {
@@ -25,9 +26,8 @@ export default Component.extend({
         message,
       });
 
-      contactRecord.save().then((result) => {
-        this.contacts.pushObject(result.target);
-      });
+      $(".thanks").show();
+      $("#contact-form button").hide();
     },
 
     deleteContact(contact) {

@@ -2,11 +2,10 @@
 class ContactsController < ApplicationController
   requires_plugin "discourse-contact-plugin"
 
-  skip_before_action :check_xhr,
-                     :verify_authenticity_token,
-                     :redirect_to_login_if_required,
-                     raise: false
-
+#  skip_before_action :check_xhr,
+#                     :verify_authenticity_token,
+#                     :redirect_to_login_if_required,
+#
   def index
     Rails.logger.info "Called ContactsController#index"
     contacts = ContactStore.get_contacts()
@@ -34,7 +33,7 @@ class ContactsController < ApplicationController
       "
 Date: #{@date}
 From: #{contact["email"] || "unknown@example.com"}
-To: jons-biography@beta.buildcivitas.com
+To: #{SiteSetting.contact_form_email}
 Subject: Contact from #{contact["name"]} - #{@date}
 
 

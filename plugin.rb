@@ -27,9 +27,9 @@ after_initialize do
 
   Discourse::Application.routes.append do
     # Map the path `/contact` to `ContactController`’s `index` method
-    get "/contact" => "contact#index"
+#    get "/contact" => "contact#index"
 
-    get "/contacts" => "contacts#index"
+#    get "/contacts" => "contacts#index"
     put "/contacts/:contact_id" => "contacts#update"
     delete "/contacts/:contact_id" => "contacts#destroy"
   end
