@@ -4,6 +4,7 @@ en:
       site_settings:
         categories:
           contact_plugin_name: "Contact form"
+          discourse-contact-plugin: "Contact form"
   js:
     contact:
       title: 'Contact us'
