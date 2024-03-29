@@ -1,7 +1,8 @@
 # coding: utf-8
 # frozen_string_literal: true
 class ContactController < ApplicationController
-  #  skip_before_action :check_xhr, raise: false
+  requires_plugin "discourse-contact-plugin"
+
   skip_before_action :check_xhr,
                      #:verify_authenticity_token,
                      #:redirect_to_login_if_required,

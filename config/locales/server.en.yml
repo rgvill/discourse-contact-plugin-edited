@@ -1,3 +1,4 @@
 en:
   site_settings:
     contact_form_enabled: "Enable contact form"
+    contact_email: "Contact email (associated with the private contact category)"

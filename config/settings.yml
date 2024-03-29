@@ -2,3 +2,6 @@ discourse-contact-plugin:
   contact_form_enabled:
     default: false
     client: true
+  contact_form_email:
+    default: "contact@example.com"
+    client: true
