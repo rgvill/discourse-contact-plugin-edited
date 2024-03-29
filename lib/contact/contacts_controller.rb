@@ -2,10 +2,10 @@
 class ContactsController < ApplicationController
   requires_plugin "discourse-contact-plugin"
 
-#  skip_before_action :check_xhr,
-#                     :verify_authenticity_token,
-#                     :redirect_to_login_if_required,
-#
+  #  skip_before_action :check_xhr,
+  #                     :verify_authenticity_token,
+  #                     :redirect_to_login_if_required,
+  #
   def index
     Rails.logger.info "Called ContactsController#index"
     contacts = ContactStore.get_contacts()
@@ -27,14 +27,15 @@ class ContactsController < ApplicationController
 
     ContactStore.add_contact(contact_id, contact)
 
-    @date = Time.now.strftime("%a, %-d %b %Y %H:%M:%S")
+    @date = Time.now.strftime("%a, %-d %b %Y %H:%M:%S  %z'")
+    @time = Time.now.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d/%Y %H:%M %p")
 
     @mail =
       "
 Date: #{@date}
 From: #{contact["email"] || "unknown@example.com"}
 To: #{SiteSetting.contact_form_email}
-Subject: Contact from #{contact["name"]} - #{@date}
+Subject: Contact from #{contact["name"]} - #{@time}
 
 
 Name:  #{contact["name"]}

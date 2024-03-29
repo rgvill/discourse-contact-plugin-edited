@@ -1,4 +1,8 @@
-<form {{action "createContact" name email phone message on="submit"}} class="contact" id="contact-form">
+<form
+  {{action "createContact" name email phone message on="submit"}}
+  class="contact"
+  id="contact-form"
+>
   <label>
     {{i18n "contact.create_contact.text_name_label"}}
     {{input required="required" class="form-control" type="text" value=name}}
@@ -19,9 +23,11 @@
     {{textarea value=message}}
   </label>
 
-  <p hidden class="thanks">Thanks!  We'll contact you soon.</p>
-
-  <button type="submit" class="btn btn-primary">
-    {{i18n "contact.create_contact.submit_label"}}
-  </button>
+  {{#if sent}}
+    <p class="thanks">Thanks! We'll contact you soon.</p>
+  {{else}}
+    <button type="submit" class="btn btn-primary">
+      {{i18n "contact.create_contact.submit_label"}}
+    </button>
+  {{/if}}
 </form>

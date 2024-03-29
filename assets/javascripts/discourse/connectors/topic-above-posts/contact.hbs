@@ -1,5 +1,7 @@
-{{#if (includes @outletArgs.model.tags "contact")}}
+{{#if @outletArgs.model.tags}}
+  {{#if (includes @outletArgs.model.tags "contact")}}
 
-  <ContactForm />
+    <ContactForm />
 
+  {{/if}}
 {{/if}}

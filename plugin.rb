@@ -4,7 +4,7 @@
 # name:discourse-contact-plugin
 # about: Add a contact form
 # meta_topic_id: TODO
-# version: 0.0.1
+# version: 0.1.0
 # authors: Jon Ericson
 # url: https://github.com/jericson/discourse-contact-plugin
 # required_version: 2.7.0
@@ -17,7 +17,7 @@ module ::MyPluginModule
   PLUGIN_NAME = "discourse-contact-plugin"
 end
 
-require_relative "lib/my_plugin_module/engine"
+require_relative "lib/contact/engine"
 
 require_relative File.expand_path("../app/contact_store.rb", __FILE__)
 

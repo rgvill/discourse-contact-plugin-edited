@@ -6,6 +6,7 @@ export default Component.extend({
     this.set("contacts", []);
     /* TODO: I've disabled the /contacts route to avoid leaking user data. */
     this.fetchContacts();
+    this.set("sent", "");
   },
 
   fetchContacts() {
@@ -30,8 +31,7 @@ export default Component.extend({
         this.contacts.pushObject(result.target);
       });
 
-      $(".thanks").show();
-      $("#contact-form button").hide();
+      this.set("sent", "true");
     },
 
     deleteContact(contact) {
