@@ -5,7 +5,7 @@ export default Component.extend({
     this._super();
     this.set("contacts", []);
     /* TODO: I've disabled the /contacts route to avoid leaking user data. */
-    //this.fetchContacts();
+    this.fetchContacts();
   },
 
   fetchContacts() {
@@ -24,6 +24,10 @@ export default Component.extend({
         email,
         phone,
         message,
+      });
+
+      contactRecord.save().then((result) => {
+        this.contacts.pushObject(result.target);
       });
 
       $(".thanks").show();

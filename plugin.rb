@@ -22,14 +22,14 @@ require_relative "lib/my_plugin_module/engine"
 require_relative File.expand_path("../app/contact_store.rb", __FILE__)
 
 after_initialize do
-  require_relative File.expand_path("../app/controllers/contact/contact_controller.rb", __FILE__)
-  require_relative File.expand_path("../app/controllers/contact/contacts_controller.rb", __FILE__)
+  require_relative File.expand_path("../lib/contact/contact_controller.rb", __FILE__)
+  require_relative File.expand_path("../lib/contact/contacts_controller.rb", __FILE__)
 
   Discourse::Application.routes.append do
     # Map the path `/contact` to `ContactController`’s `index` method
-#    get "/contact" => "contact#index"
+    get "/contact" => "contact#index"
 
-#    get "/contacts" => "contacts#index"
+    get "/contacts" => "contacts#index"
     put "/contacts/:contact_id" => "contacts#update"
     delete "/contacts/:contact_id" => "contacts#destroy"
   end
