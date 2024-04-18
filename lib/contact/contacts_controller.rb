@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
     Rails.logger.info "Called ContactsController#index"
     contacts = ContactStore.get_contacts()
 
-    render json: { contacts: contacts.values }
+    #render json: { contacts: contacts.values }
   end
 
   def update
