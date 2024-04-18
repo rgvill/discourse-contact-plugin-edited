@@ -3,8 +3,8 @@
  * route with the same name needs to be created in the `routes` directory.
  */
 export default {
-  path: 'contact',
+  path: "contact",
   map() {
     this.route("contact");
-  }
-}
+  },
+};

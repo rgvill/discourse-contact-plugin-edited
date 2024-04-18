@@ -10,6 +10,6 @@ class ContactController < ApplicationController
 
   def index
     Rails.logger.info "🚂 Called the `ContactController#index` method."
-    render("Contact");
+    render("Contact")
   end
 end

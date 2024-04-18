@@ -1,6 +1,6 @@
-import { acceptance, exists } from "discourse/tests/helpers/qunit-helpers";
-import { click, visit, currentURL, fillIn } from "@ember/test-helpers";
+import { click, currentURL } from "@ember/test-helpers";
 import { test } from "qunit";
+import { acceptance } from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Contact form", function (needs) {
   needs.settings({ contact_form_enabled: true });

@@ -2,10 +2,7 @@
 class ContactsController < ApplicationController
   requires_plugin "discourse-contact-plugin"
 
-  skip_before_action :check_xhr,
-                     :verify_authenticity_token,
-                     :redirect_to_login_if_required
-
+  skip_before_action :check_xhr, :verify_authenticity_token, :redirect_to_login_if_required
 
   def index
     Rails.logger.info "Called ContactsController#index"
