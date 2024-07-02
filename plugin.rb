@@ -3,8 +3,8 @@
 
 # name:discourse-contact-plugin
 # about: Add a contact form
-# meta_topic_id: TODO
-# version: 0.1.0
+# meta_topic_id: 305462
+# version: 0.2.0
 # authors: Jon Ericson
 # url: https://github.com/jericson/discourse-contact-plugin
 # required_version: 2.7.0
@@ -19,11 +19,11 @@ end
 
 require_relative "lib/contact/engine"
 
-require_relative File.expand_path("../app/contact_store.rb", __FILE__)
+require_relative File.expand_path("../lib/contact/contact_store.rb", __FILE__)
 
 after_initialize do
-  require_relative File.expand_path("../lib/contact/contact_controller.rb", __FILE__)
-  require_relative File.expand_path("../lib/contact/contacts_controller.rb", __FILE__)
+  require_relative File.expand_path("../app/controllers/contact_controller.rb", __FILE__)
+  require_relative File.expand_path("../app/controllers/contacts_controller.rb", __FILE__)
 
   Discourse::Application.routes.append do
     # Map the path `/contact` to `ContactController`’s `index` method
