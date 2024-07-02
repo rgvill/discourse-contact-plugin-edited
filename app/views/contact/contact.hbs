@@ -2,7 +2,7 @@
 
 <Hello />
 
-<form {{action "createContact" name email phone message on="submit"}}>
+<form {{action "createContact" name email phone message on="submit" method="post"}}>
   <label>
     {{i18n "contact.create_contact.text_name_label"}}:
 

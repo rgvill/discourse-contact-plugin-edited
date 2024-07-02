@@ -4,17 +4,11 @@ class ContactsController < ApplicationController
 
   skip_before_action :check_xhr, :verify_authenticity_token, :redirect_to_login_if_required
 
-  def index
-    Rails.logger.info "Called ContactsController#index"
-    contacts = ContactStore.get_contacts()
-
-    #render json: { contacts: contacts.values }
-  end
-
-  def update
+  def create
     Rails.logger.info "Called ContactsController#update"
 
     contact_id = params[:contact_id]
+    contact_id = Digest::MD5.hexdigest(Time.now.to_i.to_s + params[:contact][:email])
     contact = {
       "id" => contact_id,
       "name" => params[:contact][:name],
@@ -50,6 +44,16 @@ Message:
     receiver.process!
 
     render json: { contact: contact }
+  end
+
+  requires_login
+  before_action :ensure_admin
+
+  def index
+    Rails.logger.info "Called ContactsController#index"
+    contacts = ContactStore.get_contacts()
+
+    render json: { contacts: contacts.values }
   end
 
   def destroy

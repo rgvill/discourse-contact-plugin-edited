@@ -30,7 +30,7 @@ after_initialize do
     get "/contact" => "contact#index"
 
     get "/contacts" => "contacts#index"
-    put "/contacts/:contact_id" => "contacts#update"
+    put "/contacts/:contact_id" => "contacts#create"
     delete "/contacts/:contact_id" => "contacts#destroy"
   end
 end
