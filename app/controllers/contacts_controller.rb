@@ -2,10 +2,13 @@
 class ContactsController < ApplicationController
   requires_plugin "discourse-contact-plugin"
 
-#  requires_login
-  before_action :ensure_admin, only: [:index, :destroy]
+  #  requires_login
+  before_action :ensure_admin, only: %i[index destroy]
 
-  skip_before_action :check_xhr, :verify_authenticity_token, :redirect_to_login_if_required, only: [:create]
+  skip_before_action :check_xhr,
+                     :verify_authenticity_token,
+                     :redirect_to_login_if_required,
+                     only: [:create]
 
   def create
     Rails.logger.info "Called ContactsController#update"
@@ -48,7 +51,6 @@ Message:
 
     render json: { contact: contact }
   end
-
 
   def index
     Rails.logger.info "Called ContactsController#index"
