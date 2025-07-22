@@ -1,5 +1,5 @@
 <form
-  {{action "createContact" name email phone message on="submit" method="post"}}
+  {{action "createContact" name email message on="submit" method="post"}}
   class="contact"
   id="contact-form"
 >
@@ -14,13 +14,8 @@
   </label>
 
   <label>
-    {{i18n "contact.create_contact.text_phone_label"}}
-    {{input type="text" value=phone}}
-  </label>
-
-  <label>
     {{i18n "contact.create_contact.text_message_label"}}
-    {{textarea value=message}}
+    {{textarea required="required" value=message}}
   </label>
 
   {{#if sent}}
