@@ -63,7 +63,7 @@ It could be quite odd to have contact forms sprouting up hither and yon, so you 
 * The contact data is stored in the database, but it might be helpful to have an admin panel to see a list of contacts. 
 * The form is fixed to my current requirements, but it would be handy to have some flexibility about what fields it prompts for.
 
-For more information, please see: **url to meta topic**
+For more information, please see: [this post on Meta Discourse](https://meta.discourse.org/t/contact-form/305462).
 
 
 Resources that helped me:
